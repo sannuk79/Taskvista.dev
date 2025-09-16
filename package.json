@@ -15,7 +15,6 @@
     "@progress/kendo-react-layout": "^12.0.1",
     "@progress/kendo-react-progressbars": "^12.0.1",
     "@progress/kendo-theme-default": "^12.0.1",
-    "@tailwindcss/postcss": "^4.1.13",
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.8.0",
     "@testing-library/react": "^16.3.0",
@@ -60,7 +59,7 @@
     "@types/react-dom": "^19.1.9",
     "autoprefixer": "^10.4.21",
     "postcss": "^8.5.6",
-    "tailwindcss": "^4.1.13",
+    "tailwindcss": "^3.4.0",
     "typescript": "^4.9.5"
   }
 }
