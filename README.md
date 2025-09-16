@@ -2,6 +2,10 @@
 
 A comprehensive task management solution built with React, Kendo UI, and Tailwind CSS. This project showcases modern web development practices with a focus on user experience, data visualization, and responsive design.
 
+## 🌐 Live Demo
+
+[View Live Application](https://taskvista-dev-5lxw.vercel.app/dashboard)
+
 ## 🚀 Features
 
 ### Core Functionality
@@ -135,6 +139,8 @@ The project uses Create React App with custom configurations for:
    - Build Command: `npm run build`
    - Output Directory: `build`
 3. Deploy automatically on push
+
+**Live Deployment**: [https://taskvista-dev-5lxw.vercel.app](https://taskvista-dev-5lxw.vercel.app)
 
 ### Netlify
 1. Drag and drop the `build` folder
