@@ -1,3 +1,279 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Custom Animations for Forms */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.4s ease-out;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.3s ease-out;
+}
+
+.animate-fade-in-delayed {
+  animation: fadeIn 0.5s ease-out 0.2s both;
+}
+
+/* Logo Shimmer Animation */
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+@keyframes colorShift {
+  0% {
+    background: linear-gradient(45deg, #3B82F6, #8B5CF6, #EC4899);
+    background-size: 200% 200%;
+  }
+  25% {
+    background: linear-gradient(45deg, #8B5CF6, #EC4899, #F59E0B);
+    background-size: 200% 200%;
+  }
+  50% {
+    background: linear-gradient(45deg, #EC4899, #F59E0B, #10B981);
+    background-size: 200% 200%;
+  }
+  75% {
+    background: linear-gradient(45deg, #F59E0B, #10B981, #3B82F6);
+    background-size: 200% 200%;
+  }
+  100% {
+    background: linear-gradient(45deg, #10B981, #3B82F6, #8B5CF6);
+    background-size: 200% 200%;
+  }
+}
+
+.logo-shimmer {
+  background: linear-gradient(45deg, #3B82F6, #8B5CF6, #EC4899);
+  background-size: 200% 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: colorShift 3s ease-in-out infinite, shimmer 2s linear infinite;
+}
+
+/* Liquid Button Effects */
+@keyframes liquid {
+  0% {
+    border-radius: 40% 60% 70% 30% / 40% 40% 60% 50%;
+    transform: translate3d(0, 0, 0) rotateZ(0.01deg);
+  }
+  25% {
+    border-radius: 30% 60% 30% 70% / 50% 60% 30% 60%;
+  }
+  50% {
+    border-radius: 50% 40% 50% 60% / 30% 30% 60% 40%;
+    transform: translate3d(0, -10px, 0) rotateZ(0.01deg);
+  }
+  75% {
+    border-radius: 40% 60% 30% 50% / 50% 40% 50% 60%;
+  }
+  100% {
+    border-radius: 40% 60% 70% 30% / 40% 40% 60% 50%;
+    transform: translate3d(0, 0, 0) rotateZ(0.01deg);
+  }
+}
+
+@keyframes liquidGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.4), 0 0 40px rgba(59, 130, 246, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(139, 92, 246, 0.6), 0 0 60px rgba(139, 92, 246, 0.3);
+  }
+}
+
+.liquid-fill-button {
+  --liquid-button-color: #3b82f6; /* Default blue */
+  --liquid-button-fill: 0%;
+  --liquid-button-delay: 0s;
+  background: linear-gradient(var(--liquid-button-color) 0 0) no-repeat calc(200% - var(--liquid-button-fill)) 100% / 200% var(--liquid-button-fill, 0.2em);
+  transition: background 0.3s var(--liquid-button-delay), color 0.3s var(--liquid-button-delay), background-position 0.3s calc(0.3s - var(--liquid-button-delay));
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  outline: none;
+}
+
+.liquid-fill-button:hover {
+  --liquid-button-fill: 100%;
+  --liquid-button-delay: 0.3s;
+}
+
+.liquid-fill-button:focus-visible {
+  border: 1px solid #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5);
+}
+
+/* 3D Input Effect */
+.three-d-input {
+  transform-style: preserve-3d;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.three-d-input:focus {
+  transform: scale(1.05) translateZ(10px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Cursor Blink Animation */
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+.animate-blink {
+  animation: blink 1s infinite;
+}
+
+.animate-slide-in {
+  animation: slideIn 0.8s ease-out;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.animation-delay-200 {
+  animation-delay: 0.2s;
+}
+
+.animation-delay-400 {
+  animation-delay: 0.4s;
+}
+
+.animation-delay-600 {
+  animation-delay: 0.6s;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes roll-simple {
+  0% {
+    transform: rotateX(90deg);
+    opacity: 0;
+  }
+  50% {
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
+}
+
+.animate-roll-simple {
+  animation: roll-simple 12s ease-out infinite;
+  opacity: 0;
+}
+
+/* Rolling Text Animation */
+.perspective-\[9999999px\] {
+  perspective: 9999999px;
+}
+
+.transform-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.origin-\[50\%_25\%\] {
+  transform-origin: 50% 25%;
+}
+
+.origin-\[50\%_100\%\] {
+  transform-origin: 50% 100%;
+}
+
+/* Rolling Animation Keyframes */
+@keyframes rollIn {
+  0% {
+    transform: rotateX(90deg);
+    opacity: 0;
+  }
+  100% {
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
+}
+
+.animate-roll {
+  animation: rollIn 8s ease-out forwards;
+}
+
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

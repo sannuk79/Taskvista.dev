@@ -1,24 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Maindash from './components/maindash';
+import Dashboard from './components/Dashboard';
+import BrightnessSlider from './components/ui/BrightnessSlider';
+import { AnalyticsTracker } from './utils/analytics';
 
 function App() {
+  useEffect(() => {
+    const tracker = new AnalyticsTracker('taskvista');
+    tracker.trackPageView();
+    tracker.trackPerformance();
+
+    // Track errors
+    const handleError = (event) => {
+      tracker.trackError(event.error || new Error(event.message));
+    };
+
+    window.addEventListener('error', handleError);
+    window.addEventListener('unhandledrejection', (event) => {
+      tracker.trackError(new Error(event.reason));
+    });
+
+    return () => {
+      window.removeEventListener('error', handleError);
+    };
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Maindash />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+      </Routes>
+
+      {/* Global Brightness Slider for Eye Comfort */}
+      <BrightnessSlider />
+    </Router>
   );
 }
 
