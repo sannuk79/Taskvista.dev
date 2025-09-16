@@ -188,10 +188,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Support
 
-For support and questions:
-- Email: support@taskvista.com
-- GitHub Issues: [Create an issue](https://github.com/your-username/taskvista/issues)
-
+- **Email**: sannuk792@gmail.com, vanshipal3324@gmail.com
+- **GitHub**: [@sannuk79](https://github.com/sannuk79)
+- **GitHub Issues**: [Create an issue](https://github.com/sannuk79/Taskvista.dev/issues)
 ---
 
 **Built with ❤️ using Kendo UI and React**
